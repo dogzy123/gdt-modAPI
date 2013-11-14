@@ -5,7 +5,7 @@
 	"author":"DoGzY dogzy123@mail.ru",
 	"url":"https://github.com/greenheartgames/gdt-modAPI",
 	"description" : "The new mod for Game Dev Tycoon!",
-	"main" : "./modAPI.js"
+	"main" : "./modAPI.js",
 	"dependencies" : {
 		"gdt-modAPI":"0.1.x"
 	}
