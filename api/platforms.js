@@ -6,7 +6,7 @@ GDT.addPlatform({
 	startAmount : 0.20,
 	unitsSold : 0.987,
 	licencePrize : 3500000,
-	published : '40/7/4',
+	published : '40/9/3',
 	platformRetireDate : '44/6/2',
 	developmentCosts : 100000,
 	genreWeightings : [1, 1, 1, 1, 1, 1],
@@ -19,7 +19,7 @@ GDT.addPlatform({
 			getNotification : function (company) {
 				return new Notification({
 					header : "Industry News".localize(),
-					text : "A new console be released!It's Billi Milligan Disk - a new tecgonoly is used.Very mobile and beatiful product!Market will be just expolded by this!{0}.".localize().format(General.getETADescription('40/2/1', '40/7/4')),
+					text : "A new console be released!It's Billi Milligan Disk - a new tecgonoly is used.Very mobile and beatiful product!Market will be just expolded by this!{0}.".localize().format(General.getETADescription('40/2/1', '40/9/3')),
 					image : icon
 				});
 			}
