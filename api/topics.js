@@ -1,4 +1,21 @@
 ﻿(function () {
+﻿	
+﻿	GDT.addTopics([
+	{ 
+		id: "Heroes", 
+		name: "Heroes".localize("game topic"), 
+		genreWeightings: [1, 0.7, 1, .6, .8, .7], 
+		audienceWeightings: [0.6, 1, 1] 
+	}
+	
+	GDT.addTopics([
+	{ 
+		id: "Assassins", 
+		name: "Assassins".localize("game topic"), 
+		genreWeightings: [1, 0.7, 1, 1, .8, .7], 
+		audienceWeightings: [0.6, 0.7, 1] 
+	}
+]);
 	/*
 		adds topics to game.
 		takes array of topic objects defined like
