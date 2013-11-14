@@ -1,36 +1,28 @@
-(function () {
-
-	var checkPlatform = function (platform) {
-		if (!(Checks.checkPropertiesPresent(platform, ['id', 'name', 'startAmount', 'unitsSold', 'licencePrize', 'published', 'platformRetireDate', 'developmentCosts', 'genreWeightings', 'audienceWeightings', 'techLevel', 'iconUri'])
-			&& Checks.checkUniqueness(platform, 'id', Platforms.allPlatforms)
-			&& Checks.checkAudienceWeightings(platform.audienceWeightings)
-			&& Checks.checkGenreWeightings(platform.genreWeightings)))
-			return false;
-
-		if (!(Checks.checkDate(platform.published)
-			&& Checks.checkDate(platform.platformRetireDate)))
-			return false;
-
-		if (platform.marketPoints) {
-			for (var i = 0; i < platform.marketPoints.length; i++) {
-				if (!Checks.checkDate(platform.marketPoints[i].date))
-					return false;
+var icon = './mods/gdt-modAPI/examples/img/BM.png';
+GDT.addPlatform({
+	id : 'BM Disk',
+	name : 'BM Disk',
+	company : 'Billy Milligan',
+	startAmount : 0.20,
+	unitsSold : 0.987,
+	licencePrize : 3500000,
+	published : '40/7/4',
+	platformRetireDate : '44/6/2',
+	developmentCosts : 100000,
+	genreWeightings : [1, 1, 1, 1, 1, 1],
+	audienceWeightings : [1, 1, 1],
+	techLevel : 7,
+	iconUri : icon,
+	events : [{
+			id : 'BM-1',
+			date : '40/2/1',
+			getNotification : function (company) {
+				return new Notification({
+					header : "Industry News".localize(),
+					text : "A new console be released!It's Billi Milligan Disk - a new tecgonoly is used.Very mobile and beatiful product!Market will be just expolded by this!{0}.".localize().format(General.getETADescription('40/2/1', '40/7/4')),
+					image : icon
+				});
 			}
 		}
-
-		return true;
-	};
-
-
-	GDT.addPlatform = function (platform) {
-		if (!checkPlatform(platform))
-			return;
-
-		Platforms.allPlatforms.push(platform);
-		if (platform.events) {
-			for (var i = 0; i < platform.events.length; i++) {
-				GDT.addEvent(platform.events[i]);
-			}
-		}
-	};
-})();
+	]
+});
